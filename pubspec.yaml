@@ -1,9 +1,8 @@
 name: scaffold_messenger_proxy
 description: inject a widget into the widget tree that listens to a stream with a config and maps it to a SnackBar that is displayed - which enables to control the displaying of Snackbars from outside the widget tree
 version: 0.0.1
-author:
 homepage: https://quantumgray.tech/scaffold_messenger_proxy/
-repository: 
+repository: https://github.com/QuantumGray/scaffold_messenger_proxy
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

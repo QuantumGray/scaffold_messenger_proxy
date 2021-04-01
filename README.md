@@ -1,14 +1,29 @@
 # scaffold_messenger_proxy
 
-A new Flutter package project.
+reactively trigger SnackBar notifications by listening to a stream
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+````dart
+    // string is just an example type but can be any type
+    StreamController<String> myAwesomeStreamController = StreamController<String>();
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+    ...
+
+    MaterialApp(
+        // ------------
+        home: ScaffoldMessengerProxy(
+            stream: myAwesomeStreamController.stream,
+            snackBarBuilder: (config) => SnackBar(content: Text(config)),
+            // -------------
+            child: Scaffold(
+                body: Center(
+                    child: TextButton(
+                        onPressed: () => myAwesomeStreamController.sink.add('Hello World Snackbar!'), 
+                        child: Text("trigger snackbar"),
+                        ),
+                )
+            )
+        )
+    )
+````
